@@ -50,3 +50,25 @@ def get_df():
     df = clean(df)
     df = preprocess(df)
     return df
+
+
+def add_6_class(df):
+    labels = {
+        'Normal': 'Normal',
+        'DDoS_UDP': "DDoS",
+        'DDoS_ICMP': "DDoS",
+        'DDoS_HTTP': "DDoS",
+        'DDoS_TCP': "DDoS",
+        'Vulnerability_scanner': "Scanning",
+        'Password': "Malware",
+        'SQL_injection': "Injection",
+        'Uploading': "Injection",
+        'Backdoor': "Malware",
+        'Port_Scanning': "Scanning",
+        'XSS': "Injection",
+        'Ransomware': "Malware",
+        'Fingerprinting': "Scanning",
+        'MITM': "MITM",
+    }
+    df['6_Class'] = df['Attack_type'].map(labels)
+    return df

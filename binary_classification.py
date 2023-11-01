@@ -1,11 +1,11 @@
 import datetime
 import os
-
 import joblib
 from matplotlib import pyplot as plt
 import pandas as pd
 import seaborn as sns
 from sklearn.model_selection import train_test_split, GridSearchCV
+from sklearn.svm import SVC, LinearSVC
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
@@ -29,7 +29,7 @@ def create_classifier_decision_tree(train, test):
         'min_samples_leaf': [1, 2, 4]
     }
     print(f"{datetime.datetime.now()} - Decision Tree: Grid search in progress...")
-    clf = GridSearchCV(DecisionTreeClassifier(), param_grid, cv=5, verbose=2, n_jobs=6)
+    clf = GridSearchCV(DecisionTreeClassifier(), param_grid, cv=5, verbose=1, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - Decision Tree: Grid search completed.")
     return clf.best_estimator_
@@ -42,7 +42,7 @@ def create_classifier_logistic_regression(train, test):
         'solver': ['liblinear']
     }
     print(f"{datetime.datetime.now()} - Logistic Regression: Grid search in progress...")
-    clf = GridSearchCV(LogisticRegression(solver='liblinear'), param_grid, cv=5, verbose=2, n_jobs=6)
+    clf = GridSearchCV(LogisticRegression(solver='liblinear'), param_grid, cv=5, verbose=1, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - Logistic Regression: Grid search completed.")
     return clf.best_estimator_
@@ -56,15 +56,17 @@ def create_classifier_random_forest(train, test):
         'min_samples_leaf': [1, 2, 4]
     }
     print(f"{datetime.datetime.now()} - Random Forest: Grid search in progress...")
-    clf = GridSearchCV(RandomForestClassifier(), param_grid, cv=5, verbose=2, n_jobs=6)
+    clf = GridSearchCV(RandomForestClassifier(), param_grid, cv=5, verbose=1, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - Random Forest: Grid search completed.")
     return clf.best_estimator_
+
 
 def save_best_model(clf, model_name):
     model_path = os.path.join('results/models', model_name + '.joblib')
     joblib.dump(clf, model_path)
     print(f"Best {model_name} model saved at {model_path}")
+
 
 def test_classifier(clf, X_test, y_test):
     y_pred = clf.predict(X_test)
@@ -95,7 +97,7 @@ def prepare_binary_classification(df):
 
 
 def run_binary_classification(clf, test):
-    clf_decision_tree, clf_logistic_regression, clf_random_forest = clf
+    clf_decision_tree, clf_logistic_regression, clf_random_forest, clf_svm = clf
     X_test, y_test = test
 
     print("Decision Tree Classifier...")
