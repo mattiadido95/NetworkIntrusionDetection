@@ -1,4 +1,7 @@
 import datetime
+import os
+
+import joblib
 from matplotlib import pyplot as plt
 import pandas as pd
 import seaborn as sns
@@ -11,9 +14,9 @@ from sklearn.metrics import classification_report
 
 def split_data(df):
     # drop Attack_type column because it is not needed for binary classification
-    df.drop(columns=['Attack_type'], inplace=True)
-    X = df.drop(columns=['Attack_label'])
-    y = df['Attack_label']
+    bin_df = df.drop(columns=['Attack_type'])
+    X = bin_df.drop(columns=['Attack_label'])
+    y = bin_df['Attack_label']
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=200)
     return X_train, X_test, y_train, y_test
 
@@ -26,7 +29,7 @@ def create_classifier_decision_tree(train, test):
         'min_samples_leaf': [1, 2, 4]
     }
     print(f"{datetime.datetime.now()} - Decision Tree: Grid search in progress...")
-    clf = GridSearchCV(DecisionTreeClassifier(), param_grid, cv=5, verbose=2, n_jobs=4)
+    clf = GridSearchCV(DecisionTreeClassifier(), param_grid, cv=5, verbose=2, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - Decision Tree: Grid search completed.")
     return clf.best_estimator_
@@ -39,7 +42,7 @@ def create_classifier_logistic_regression(train, test):
         'solver': ['liblinear']
     }
     print(f"{datetime.datetime.now()} - Logistic Regression: Grid search in progress...")
-    clf = GridSearchCV(LogisticRegression(solver='liblinear'), param_grid, cv=5, verbose=2, n_jobs=4)
+    clf = GridSearchCV(LogisticRegression(solver='liblinear'), param_grid, cv=5, verbose=2, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - Logistic Regression: Grid search completed.")
     return clf.best_estimator_
@@ -53,11 +56,15 @@ def create_classifier_random_forest(train, test):
         'min_samples_leaf': [1, 2, 4]
     }
     print(f"{datetime.datetime.now()} - Random Forest: Grid search in progress...")
-    clf = GridSearchCV(RandomForestClassifier(), param_grid, cv=5, verbose=2, n_jobs=4)
+    clf = GridSearchCV(RandomForestClassifier(), param_grid, cv=5, verbose=2, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - Random Forest: Grid search completed.")
     return clf.best_estimator_
 
+def save_best_model(clf, model_name):
+    model_path = os.path.join('results/models', model_name + '.joblib')
+    joblib.dump(clf, model_path)
+    print(f"Best {model_name} model saved at {model_path}")
 
 def test_classifier(clf, X_test, y_test):
     y_pred = clf.predict(X_test)
@@ -67,10 +74,10 @@ def test_classifier(clf, X_test, y_test):
     plt.title('Confusion Matrix for ' + clf.__class__.__name__ + ' Classifier')
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
-    plt.savefig('results/confusion_matrix_' + clf.__class__.__name__ + '.png')
+    plt.savefig('results/binary/confusion_matrix_' + clf.__class__.__name__ + '.png')
     plt.show()
     report = classification_report(y_test, y_pred)
-    with open('results/classification_report_' + clf.__class__.__name__ + '.txt', 'w') as file:
+    with open('results/binary/classification_report_' + clf.__class__.__name__ + '.txt', 'w') as file:
         file.write(report)
 
 
@@ -78,8 +85,11 @@ def prepare_binary_classification(df):
     X_train, X_test, y_train, y_test = split_data(df)
 
     clf_decision_tree = create_classifier_decision_tree(X_train, y_train)
+    save_best_model(clf_decision_tree, 'decision_tree_binary')
     clf_logistic_regression = create_classifier_logistic_regression(X_train, y_train)
+    save_best_model(clf_logistic_regression, 'logistic_regression_binary')
     clf_random_forest = create_classifier_random_forest(X_train, y_train)
+    save_best_model(clf_random_forest, 'random_forest_binary')
 
     return clf_decision_tree, clf_logistic_regression, clf_random_forest, X_test, y_test
 
