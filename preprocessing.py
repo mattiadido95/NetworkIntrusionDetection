@@ -1,3 +1,5 @@
+import os
+
 from matplotlib import pyplot as plt
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.utils import shuffle
@@ -34,7 +36,7 @@ def encode_text_dummy(df, name):
     df.drop(name, axis=1, inplace=True)
 
 
-def preprocess(df):
+def preprocess_columns(df):
     encode_text_dummy(df, 'http.request.method')
     encode_text_dummy(df, 'http.referer')
     encode_text_dummy(df, "http.request.version")
@@ -45,14 +47,15 @@ def preprocess(df):
     return df
 
 
-def get_df():
-    df = load_data()
-    df = clean(df)
-    df = preprocess(df)
+def get_df(six_class=False):
+    if six_class:
+        df = pd.read_csv('data\ML-EdgeIIoT-dataset-6-class.csv', low_memory=False)
+        return df
+    df = pd.read_csv('data\ML-EdgeIIoT-dataset-preprocessed.csv', low_memory=False)
     return df
 
 
-def add_6_class(df):
+def create_6_class_dataframe(df):
     labels = {
         'Normal': 'Normal',
         'DDoS_UDP': "DDoS",
@@ -71,4 +74,30 @@ def add_6_class(df):
         'MITM': "MITM",
     }
     df['6_Class'] = df['Attack_type'].map(labels)
-    return df
+    df.drop(columns=['Attack_type', 'Attack_label'], inplace=True)
+    file_path = os.path.join('data', 'ML-EdgeIIoT-dataset-6-class.csv')
+    df.to_csv(file_path, index=False)
+
+
+def extract_one_record_per_attack_type(df):
+    unique_attack_types = df['Attack_type'].unique()
+    records = []
+    indexes_to_drop = []
+    for attack_type in unique_attack_types:
+        attack_records = df[df['Attack_type'] == attack_type].head(1)
+        indexes_to_drop.append(attack_records.index.values[0])
+        records.append(attack_records)
+
+    final_test_dataset = pd.concat(records, ignore_index=True)
+    updated_df = df.drop(indexes_to_drop)
+
+    return final_test_dataset, updated_df
+
+def run():
+    df = load_data()  # read dataset
+    df = clean(df)  # remove columns with not relevant information
+    df = preprocess_columns(df)  # preprocess columns
+    final_test_df, df = extract_one_record_per_attack_type(df)  # extract one record per attack type
+    df.to_csv('data\ML-EdgeIIoT-dataset-preprocessed.csv', index=False)  # save preprocessed dataset
+    create_6_class_dataframe(df)  # create 6 class dataset
+    final_test_df.to_csv('data\ML-EdgeIIoT-dataset-final-test.csv', index=False)  # save final test dataset

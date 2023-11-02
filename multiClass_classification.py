@@ -29,7 +29,7 @@ def create_classifier_svm(train, test):
         "estimator__degree": [1, 2, 3, 4],
     }
     print(f"{datetime.datetime.now()} - SVM: Grid search in progress...")
-    clf = GridSearchCV(OneVsRestClassifier(SVC()), param_grid, cv=5, verbose=2, n_jobs=6)
+    clf = GridSearchCV(OneVsRestClassifier(SVC()), param_grid, cv=5, verbose=1, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - SVM: Grid search completed.")
     return clf.best_estimator_
@@ -43,7 +43,7 @@ def create_classifier_random_forest(train, test):
         'min_samples_leaf': [1, 2, 4]
     }
     print(f"{datetime.datetime.now()} - Random Forest: Grid search in progress...")
-    clf = GridSearchCV(RandomForestClassifier(), param_grid, cv=5, verbose=2, n_jobs=6)
+    clf = GridSearchCV(RandomForestClassifier(), param_grid, cv=5, verbose=1, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - Random Forest: Grid search completed.")
     return clf.best_estimator_
@@ -56,7 +56,7 @@ def create_classifier_knn(train, test):
         'algorithm': ['auto', 'ball_tree', 'kd_tree']
     }
     print(f"{datetime.datetime.now()} - K-Nearest Neighbors: Grid search in progress...")
-    clf = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5, verbose=2, n_jobs=6)
+    clf = GridSearchCV(KNeighborsClassifier(), param_grid, cv=5, verbose=1, n_jobs=6)
     clf.fit(train, test)
     print(f"{datetime.datetime.now()} - K-Nearest Neighbors: Grid search completed.")
     return clf.best_estimator_

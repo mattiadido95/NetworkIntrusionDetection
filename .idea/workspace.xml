@@ -5,30 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cac1b5be-3f8a-4444-8da5-15fb327af76d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/binary_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/binary_classification.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/multiClass_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiClass_classification.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/binary/classification_report_DecisionTreeClassifier.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/binary/classification_report_LogisticRegression.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/binary/classification_report_RandomForestClassifier.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/binary/confusion_matrix_DecisionTreeClassifier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/binary/confusion_matrix_LogisticRegression.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/binary/confusion_matrix_RandomForestClassifier.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/results/models/decision_tree_binary.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/knn_multiClass.joblib" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/results/models/logistic_regression_binary.joblib" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/results/models/random_forest_binary.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/random_forest_multiClass.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/multiClass/classification_report_KNeighborsClassifier.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/multiClass/classification_report_RandomForestClassifier.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/multiClass/confusion_matrix_KNeighborsClassifier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/multiClass/confusion_matrix_RandomForestClassifier.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,20 +39,21 @@
     <option name="showLibraryContents" value="true" />
     <option name="sortKey" value="BY_TIME_DESCENDING" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Mattia\Documents\AIDE\Projects\itcRisk\NetworkIntrusionDetection\results\binary" />
@@ -105,7 +103,8 @@
       <workItem from="1698738693922" duration="16000" />
       <workItem from="1698760921796" duration="15286000" />
       <workItem from="1698819980933" duration="14002000" />
-      <workItem from="1698846375707" duration="10496000" />
+      <workItem from="1698846375707" duration="10655000" />
+      <workItem from="1698908434047" duration="15091000" />
     </task>
     <servers />
   </component>
@@ -113,6 +112,6 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NetworkIntrusionDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1698856847863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NetworkIntrusionDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1698965464850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

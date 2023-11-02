@@ -97,7 +97,7 @@ def prepare_binary_classification(df):
 
 
 def run_binary_classification(clf, test):
-    clf_decision_tree, clf_logistic_regression, clf_random_forest, clf_svm = clf
+    clf_decision_tree, clf_logistic_regression, clf_random_forest = clf
     X_test, y_test = test
 
     print("Decision Tree Classifier...")
