@@ -115,3 +115,8 @@ if __name__ == '__main__':
             break
         else:
             print("Option not valid.")
+
+
+
+# TODO rifare train perche mancano i report
+# TODO probabile fare il train dei multi class con dataset specifici

@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cac1b5be-3f8a-4444-8da5-15fb327af76d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/csv-editor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binary_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/binary_classification.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/multiClass_classification.py" beforeDir="false" afterPath="$PROJECT_DIR$/multiClass_classification.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/decision_tree_binary.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/logistic_regression_binary.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/random_forest_binary.joblib" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,14 +96,25 @@
       <workItem from="1698760921796" duration="15286000" />
       <workItem from="1698819980933" duration="14002000" />
       <workItem from="1698846375707" duration="10655000" />
-      <workItem from="1698908434047" duration="15091000" />
+      <workItem from="1698908434047" duration="15545000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/NetworkIntrusionDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1698965464850" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NetworkIntrusionDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1698965542404" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
