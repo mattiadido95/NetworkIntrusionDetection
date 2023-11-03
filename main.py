@@ -1,6 +1,5 @@
 import pandas as pd
 import pickle
-
 from joblib import load
 
 from binary_classification import prepare_binary_classification, run_binary_classification

@@ -43,7 +43,7 @@ Binary classifier prediction: 1 - Real label: 1
 Multi classifier prediction: Backdoor - Real label: Backdoor
 
 Binary classifier prediction: 1 - Real label: 1
-6 Class classifier prediction: Scanning - Real label: Injection *** 
+6 Class classifier prediction: DDoS - Real label: Injection *** 
 Multi classifier prediction: Vulnerability_scanner - Real label: XSS *** 
 
 Binary classifier prediction: 0 - Real label: 0

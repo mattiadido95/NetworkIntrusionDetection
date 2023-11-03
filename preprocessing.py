@@ -10,7 +10,8 @@ from sklearn.metrics import classification_report
 
 
 def load_data():
-    df = pd.read_csv('data\ML-EdgeIIoT-dataset.csv', low_memory=False)
+    # df = pd.read_csv('data\ML-EdgeIIoT-dataset.csv', low_memory=False)
+    df = pd.read_csv('data\DNN-EdgeIIoT-dataset.csv', low_memory=False)
     return df
 
 

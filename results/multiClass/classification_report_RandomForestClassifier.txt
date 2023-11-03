@@ -5,10 +5,10 @@
             DDoS_ICMP       1.00      1.00      1.00      2628
              DDoS_TCP       1.00      1.00      1.00      2045
              DDoS_UDP       1.00      1.00      1.00      2896
-       Fingerprinting       0.98      0.69      0.81       175
+       Fingerprinting       0.96      0.69      0.80       175
                  MITM       1.00      1.00      1.00        72
                Normal       1.00      1.00      1.00      4820
-             Password       0.79      0.86      0.83      1982
+             Password       0.80      0.86      0.83      1982
         Port_Scanning       0.94      1.00      0.97      1835
            Ransomware       0.94      0.95      0.95      1919
         SQL_injection       0.93      0.79      0.85      2058
