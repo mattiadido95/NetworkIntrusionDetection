@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac1b5be-3f8a-4444-8da5-15fb327af76d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/preprocessing.py" beforeDir="false" afterPath="$PROJECT_DIR$/preprocessing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/decision_tree_binary.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/knn_multi6Class.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/knn_multiClass.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/logistic_regression_binary.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/random_forest_binary.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/models/random_forest_multi6Class.joblib" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/multiClass/classification_report_RandomForestClassifier.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results/multiClass/classification_report_RandomForestClassifier.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/multiClass/confusion_matrix_RandomForestClassifier.png" beforeDir="false" afterPath="$PROJECT_DIR$/results/multiClass/confusion_matrix_RandomForestClassifier.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/results/prediction_results.txt" beforeDir="false" afterPath="$PROJECT_DIR$/results/prediction_results.txt" afterDir="false" />
-    </list>
+    <list default="true" id="cac1b5be-3f8a-4444-8da5-15fb327af76d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -146,6 +133,7 @@
       <workItem from="1698846375707" duration="10655000" />
       <workItem from="1698908434047" duration="15983000" />
       <workItem from="1699006112188" duration="12490000" />
+      <workItem from="1699028387400" duration="3740000" />
     </task>
     <servers />
   </component>
@@ -165,6 +153,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/NetworkIntrusionDetection$test.coverage" NAME="test Coverage Results" MODIFIED="1699026300419" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/NetworkIntrusionDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1699028161198" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/NetworkIntrusionDetection$main.coverage" NAME="main Coverage Results" MODIFIED="1699029038274" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

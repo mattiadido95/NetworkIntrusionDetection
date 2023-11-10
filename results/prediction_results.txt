@@ -1,22 +1,22 @@
+Binary classifier prediction: 0 - Real label: 0
+6 Class classifier prediction: Normal - Real label: Normal
+Multi classifier prediction: Normal - Real label: Normal
+
 Binary classifier prediction: 1 - Real label: 1
 6 Class classifier prediction: MITM - Real label: MITM
 Multi classifier prediction: MITM - Real label: MITM
 
 Binary classifier prediction: 1 - Real label: 1
-6 Class classifier prediction: Scanning - Real label: Scanning
-Multi classifier prediction: Fingerprinting - Real label: Fingerprinting
+6 Class classifier prediction: Injection - Real label: Injection
+Multi classifier prediction: SQL_injection - Real label: Uploading *** 
 
 Binary classifier prediction: 1 - Real label: 1
 6 Class classifier prediction: Malware - Real label: Malware
 Multi classifier prediction: Ransomware - Real label: Ransomware
 
 Binary classifier prediction: 1 - Real label: 1
-6 Class classifier prediction: Injection - Real label: Injection
-Multi classifier prediction: Uploading - Real label: Uploading
-
-Binary classifier prediction: 1 - Real label: 1
-6 Class classifier prediction: Injection - Real label: Injection
-Multi classifier prediction: Uploading - Real label: SQL_injection *** 
+6 Class classifier prediction: Malware - Real label: Injection *** 
+Multi classifier prediction: Password - Real label: SQL_injection *** 
 
 Binary classifier prediction: 1 - Real label: 1
 6 Class classifier prediction: DDoS - Real label: DDoS
@@ -35,8 +35,8 @@ Binary classifier prediction: 1 - Real label: 1
 Multi classifier prediction: Port_Scanning - Real label: Port_Scanning
 
 Binary classifier prediction: 1 - Real label: 1
-6 Class classifier prediction: Scanning - Real label: Scanning
-Multi classifier prediction: Vulnerability_scanner - Real label: Vulnerability_scanner
+6 Class classifier prediction: Injection - Real label: Scanning *** 
+Multi classifier prediction: XSS - Real label: Vulnerability_scanner *** 
 
 Binary classifier prediction: 1 - Real label: 1
 6 Class classifier prediction: Malware - Real label: Malware
@@ -44,11 +44,11 @@ Multi classifier prediction: Backdoor - Real label: Backdoor
 
 Binary classifier prediction: 1 - Real label: 1
 6 Class classifier prediction: DDoS - Real label: Injection *** 
-Multi classifier prediction: Vulnerability_scanner - Real label: XSS *** 
+Multi classifier prediction: DDoS_HTTP - Real label: XSS *** 
 
-Binary classifier prediction: 0 - Real label: 0
-6 Class classifier prediction: Normal - Real label: Normal
-Multi classifier prediction: Normal - Real label: Normal
+Binary classifier prediction: 1 - Real label: 1
+6 Class classifier prediction: Scanning - Real label: Scanning
+Multi classifier prediction: Fingerprinting - Real label: Fingerprinting
 
 Binary classifier prediction: 1 - Real label: 1
 6 Class classifier prediction: DDoS - Real label: DDoS
