@@ -108,3 +108,5 @@ def run_multi_classification(clf, test):
 
     print("K-Nearest Neighbors Classifier...")
     test_classifier(clf_knn, X_test, y_test)
+
+

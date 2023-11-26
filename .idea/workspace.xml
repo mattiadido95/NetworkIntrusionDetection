@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cac1b5be-3f8a-4444-8da5-15fb327af76d" name="Changes" comment="" />
+    <list default="true" id="cac1b5be-3f8a-4444-8da5-15fb327af76d" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/csv-editor.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -51,6 +54,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Mattia/Documents/AIDE/Projects/itcRisk/NetworkIntrusionDetection&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -134,6 +138,11 @@
       <workItem from="1698908434047" duration="15983000" />
       <workItem from="1699006112188" duration="12490000" />
       <workItem from="1699028387400" duration="3740000" />
+      <workItem from="1699617371662" duration="28000" />
+      <workItem from="1699946215093" duration="34000" />
+      <workItem from="1699960660550" duration="4000" />
+      <workItem from="1700985367468" duration="234000" />
+      <workItem from="1700985656010" duration="1640000" />
     </task>
     <servers />
   </component>
