@@ -1,7 +1,9 @@
+import sys
+
 import pandas as pd
 import pickle
 from joblib import load
-
+from smart_agricolture import traffic_prediction
 from binary_classification import prepare_binary_classification, run_binary_classification
 from multiClass_classification import prepare_multi_classification, run_multi_classification
 from preprocessing import get_df, create_6_class_dataframe, run
@@ -93,27 +95,35 @@ def preprocessing():
     run()
 
 
+
+
+
 if __name__ == '__main__':
-    while True:
-        print("\nMenu:")
-        print("1. Execute preprocessing")
-        print("2. Execute training of classifiers")
-        print("3. Execute prediction of classifiers")
-        print("4. Exit")
 
-        choice = input("Select an option: ")
+    if sys.argv < 2:
+        while True:
+            print("\nMenu:")
+            print("1. Execute preprocessing")
+            print("2. Execute training of classifiers")
+            print("3. Execute prediction of classifiers")
+            print("4. Exit")
 
-        if choice == '1':
-            preprocessing()
-        elif choice == '2':
-            training()
-        elif choice == '3':
-            prediction()
-        elif choice == '4':
-            print("Bye!")
-            break
-        else:
-            print("Option not valid.")
+            choice = input("Select an option: ")
+
+            if choice == '1':
+                preprocessing()
+            elif choice == '2':
+                training()
+            elif choice == '3':
+                prediction()
+            elif choice == '4':
+                print("Bye!")
+                break
+            else:
+                print("Option not valid.")
+    else:
+        if sys.argv[1] == 'auto':
+            traffic_prediction()
 
 
 
