@@ -20,6 +20,7 @@ def training():
     if choice == '1':
         # run binary classification
         df = get_df()
+        df_categorical = df.astype('category')
         clf_decision_tree, clf_logistic_regression, clf_random_forest, X_test, y_test = prepare_binary_classification(
             df)
         run_binary_classification((clf_decision_tree, clf_logistic_regression, clf_random_forest),
@@ -38,7 +39,7 @@ def training():
 
 def prediction():
     # load test dataset
-    test_df = pd.read_csv('data\ML-EdgeIIoT-dataset-final-test.csv', low_memory=False)
+    test_df = pd.read_csv('output_2024-02-25.csv', low_memory=False)
     labels = {
         'Normal': 'Normal',
         'DDoS_UDP': "DDoS",
@@ -74,19 +75,25 @@ def prediction():
     with open('results/prediction_results.txt', 'w') as file:
         for i in range(len(predictions_binary)):
             if predictions_binary[i] != y['Attack_label'][i]:
-                file.write(f"Binary classifier prediction: {str(predictions_binary[i])} - Real label: {str(y['Attack_label'][i])} *** \n")
+                file.write(
+                    f"Binary classifier prediction: {str(predictions_binary[i])} - Real label: {str(y['Attack_label'][i])} *** \n")
             else:
-                file.write(f"Binary classifier prediction: {str(predictions_binary[i])} - Real label: {str(y['Attack_label'][i])}\n")
+                file.write(
+                    f"Binary classifier prediction: {str(predictions_binary[i])} - Real label: {str(y['Attack_label'][i])}\n")
 
             if predictions_six_class[i] != y['6_Class'][i]:
-                file.write(f"6 Class classifier prediction: {str(predictions_six_class[i])} - Real label: {str(y['6_Class'][i])} *** \n")
+                file.write(
+                    f"6 Class classifier prediction: {str(predictions_six_class[i])} - Real label: {str(y['6_Class'][i])} *** \n")
             else:
-                file.write(f"6 Class classifier prediction: {str(predictions_six_class[i])} - Real label: {str(y['6_Class'][i])}\n")
+                file.write(
+                    f"6 Class classifier prediction: {str(predictions_six_class[i])} - Real label: {str(y['6_Class'][i])}\n")
 
             if predictions_multiclass[i] != y['Attack_type'][i]:
-                file.write(f"Multi classifier prediction: {str(predictions_multiclass[i])} - Real label: {str(y['Attack_type'][i])} *** \n")
+                file.write(
+                    f"Multi classifier prediction: {str(predictions_multiclass[i])} - Real label: {str(y['Attack_type'][i])} *** \n")
             else:
-                file.write(f"Multi classifier prediction: {str(predictions_multiclass[i])} - Real label: {str(y['Attack_type'][i])}\n")
+                file.write(
+                    f"Multi classifier prediction: {str(predictions_multiclass[i])} - Real label: {str(y['Attack_type'][i])}\n")
 
             file.write("\n")
 
@@ -95,12 +102,9 @@ def preprocessing():
     run()
 
 
-
-
-
 if __name__ == '__main__':
 
-    if sys.argv < 2:
+    if len(sys.argv) < 2:
         while True:
             print("\nMenu:")
             print("1. Execute preprocessing")
@@ -124,8 +128,6 @@ if __name__ == '__main__':
     else:
         if sys.argv[1] == 'auto':
             traffic_prediction()
-
-
 
 # TODO rifare train perche mancano i report
 # TODO probabile fare il train dei multi class con dataset specifici
