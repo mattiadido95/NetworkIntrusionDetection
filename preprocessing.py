@@ -10,10 +10,8 @@ from sklearn.metrics import classification_report
 
 
 def load_data():
-    # df = pd.read_csv('data\ML-EdgeIIoT-dataset.csv', low_memory=False)
-   # df = pd.read_csv('data\ML-EdgeIIoT-dataset.csv', low_memory=False)
-    df = pd.read_csv('output_2024-02-25.csv', low_memory=False)
-
+    df = pd.read_csv('data\ML-EdgeIIoT-dataset.csv', low_memory=False)
+    #  df = pd.read_csv('output_2024-02-25.csv', low_memory=False)
     return df
 
 
@@ -95,6 +93,7 @@ def extract_one_record_per_attack_type(df):
     updated_df = df.drop(indexes_to_drop)
 
     return final_test_dataset, updated_df
+
 
 def run():
     df = load_data()  # read dataset

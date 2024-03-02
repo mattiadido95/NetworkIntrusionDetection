@@ -86,26 +86,25 @@ def test_classifier(clf, X_test, y_test):
 def prepare_binary_classification(df):
     X_train, X_test, y_train, y_test = split_data(df)
 
-    # clf_decision_tree = create_classifier_decision_tree(X_train, y_train)
-    # save_best_model(clf_decision_tree, 'decision_tree_binary')
-    # clf_logistic_regression = create_classifier_logistic_regression(X_train, y_train)
-    # save_best_model(clf_logistic_regression, 'logistic_regression_binary')
+    clf_decision_tree = create_classifier_decision_tree(X_train, y_train)
+    save_best_model(clf_decision_tree, 'decision_tree_binary')
+    clf_logistic_regression = create_classifier_logistic_regression(X_train, y_train)
+    save_best_model(clf_logistic_regression, 'logistic_regression_binary')
     clf_random_forest = create_classifier_random_forest(X_train, y_train)
     save_best_model(clf_random_forest, 'random_forest_binary')
 
-    return 0, 0, clf_random_forest, X_test, y_test
-    # return clf_decision_tree, clf_logistic_regression, clf_random_forest, X_test, y_test
+    return clf_decision_tree, clf_logistic_regression, clf_random_forest, X_test, y_test
 
 
 def run_binary_classification(clf, test):
     clf_decision_tree, clf_logistic_regression, clf_random_forest = clf
     X_test, y_test = test
 
-    # print("Decision Tree Classifier...")
-    # test_classifier(clf_decision_tree, X_test, y_test)
-    #
-    # print("Logistic Regression Classifier...")
-    # test_classifier(clf_logistic_regression, X_test, y_test)
+    print("Decision Tree Classifier...")
+    test_classifier(clf_decision_tree, X_test, y_test)
+
+    print("Logistic Regression Classifier...")
+    test_classifier(clf_logistic_regression, X_test, y_test)
 
     print("Random Forest Classifier...")
     test_classifier(clf_random_forest, X_test, y_test)

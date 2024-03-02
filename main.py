@@ -1,5 +1,5 @@
 import sys
-
+import numpy as np
 import pandas as pd
 import pickle
 from joblib import load
@@ -39,7 +39,7 @@ def training():
 
 def prediction():
     # load test dataset
-    test_df = pd.read_csv('output_2024-02-25.csv', low_memory=False)
+    test_df = pd.read_csv('data/ML-EdgeIIoT-dataset-final-test.csv', low_memory=False)
     labels = {
         'Normal': 'Normal',
         'DDoS_UDP': "DDoS",
@@ -71,6 +71,15 @@ def prediction():
     predictions_binary = binary_classifier.predict(X)
     predictions_six_class = six_class_classifier.predict(X)
     predictions_multiclass = multiclass_classifier.predict(X)
+
+    # TODO fare questa cosa anche per le altre predizioni e poi stamparle
+    predictions_binary_proba = binary_classifier.predict_proba(X)
+    for i, proba in enumerate(predictions_binary_proba):
+        print(f"Riga {i+1}:")
+        for class_, percentage in zip(binary_classifier.classes_, proba):
+            print(f"Classe {class_}: {percentage*100:.2f}%")
+        print()
+
 
     with open('results/prediction_results.txt', 'w') as file:
         for i in range(len(predictions_binary)):
@@ -129,5 +138,4 @@ if __name__ == '__main__':
         if sys.argv[1] == 'auto':
             traffic_prediction()
 
-# TODO rifare train perche mancano i report
-# TODO probabile fare il train dei multi class con dataset specifici
+
